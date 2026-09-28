@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard Elektoral Dapil Jateng V 2019–2024</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf7f7;--ink:#2a1214;--mut:#7a5c5e;--red:#b3121a;--deep:#5e0b10;--line:#e6d5d6;--card:#fff;--psi:#e8871e;--gr:#c4b3b4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b0c0d;--ink:#f6e9e9;--mut:#c2a3a5;--card:#2a1416;--line:#4a2a2c;--gr:#7d6668}}
+:root[data-theme="dark"]{--bg:#1b0c0d;--ink:#f6e9e9;--mut:#c2a3a5;--card:#2a1416;--line:#4a2a2c;--gr:#7d6668}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.5}
+header{background:var(--deep);color:#fff;padding:28px 20px 34px}
+.w{max-width:1040px;margin:0 auto}
+h1{font-size:clamp(22px,4vw,34px);line-height:1.15;margin:0 0 6px;font-weight:800;max-width:24ch}
+header p{margin:0;opacity:.85;max-width:62ch}
+section{margin:22px 0}h2{font-size:19px;margin:0 0 10px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:-18px}
+.k{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:8px;padding:12px 14px}
+.k b{display:block;font-size:26px;font-weight:800;line-height:1.1}.k span{font-size:13px;color:var(--mut)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--red);border-radius:8px;overflow:hidden}
+.seg button{font:inherit;cursor:pointer;background:transparent;color:var(--red);border:0;padding:8px 14px;font-weight:600}
+.seg button[aria-pressed=true]{background:var(--red);color:#fff}
+button:focus-visible,select:focus-visible,path:focus-visible,input:focus-visible{outline:3px solid var(--psi);outline-offset:2px}
+select{font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--red);background:var(--card);color:var(--ink)}
+.two{display:grid;gap:18px}@media(min-width:860px){.two{grid-template-columns:3fr 2fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}
+svg.map{width:100%;max-height:420px;display:block}
+svg.map path{cursor:pointer;stroke-linejoin:round;transition:opacity .15s}svg.map path:hover{opacity:.85}
+svg.map text{pointer-events:none;font-weight:800;fill:var(--ink);stroke:var(--card);stroke-width:3px;paint-order:stroke}
+.lg{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--mut);margin-top:6px}
+.gb{height:10px;width:140px;border-radius:5px;border:1px solid var(--line)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:10px}
+.st div{border:1px solid var(--line);border-radius:8px;padding:8px 10px}.st b{display:block;font-size:19px;font-weight:800}.st span{font-size:12px;color:var(--mut)}
+.row{display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:center;margin:5px 0;font-size:14px}
+.tr{background:color-mix(in srgb,var(--gr) 25%,transparent);border-radius:4px;height:22px;position:relative}
+.f{height:100%;border-radius:4px;background:var(--gr);min-width:2px}
+.row.pdip .f{background:var(--red)}.row.psi .f{background:var(--psi)}.row.neg .f{background:#5a7d9a}
+.row.pdip label,.row.psi label{font-weight:800}
+.tr i{position:absolute;left:8px;top:0;line-height:22px;font-style:normal;font-size:12px;font-weight:600;color:var(--ink);text-shadow:0 0 3px var(--card),0 0 3px var(--card)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left}td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+.wrap{overflow-x:auto}
+.note{font-size:13px;color:var(--mut)}.warn{border-left:4px solid var(--psi);padding:8px 12px;background:color-mix(in srgb,var(--psi) 12%,transparent);border-radius:4px;font-size:14px}
+ul{margin:6px 0;padding-left:20px}footer{padding:18px 20px 30px;color:var(--mut);font-size:13px}
+.sl{display:grid;grid-template-columns:130px 1fr 60px;gap:8px;align-items:center;font-size:14px;margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.chip{border:2px solid;border-radius:20px;padding:3px 12px;font-size:14px}.chip b{font-size:17px}
+</style></head><body>
+<header><div class="w"><h1>Tantangan Pileg PDI Perjuangan di Dapil Jateng V</h1>
+<p>Boyolali, Klaten, Sukoharjo, Kota Surakarta · perolehan suara 2019 dan 2024 dari lampiran partai, dengan ringkasan policy brief.</p></div></header>
+<main class="w" style="padding:0 16px">
+<div class="kpis">
+<div class="k"><b>4 → 3</b><span>Kursi PDIP, 2019 → 2024 dari 8 kursi dapil (policy brief)</span></div>
+<div class="k"><b id="kpu">–</b><span id="kpul"></span></div>
+<div class="k"><b id="kp">–</b><span id="kpl"></span></div>
+<div class="k"><b id="ks">–</b><span id="ksl"></span></div>
+</div>
+
+<section><h2>1. Filter</h2>
+<div class="bar"><div class="seg" id="sy" role="group" aria-label="Tahun"><button data-m="2019">2019</button><button data-m="2024">2024</button><button data-m="d">Perubahan 2019→2024</button></div>
+<div class="seg" id="sr" role="group" aria-label="Wilayah"></div></div>
+<p class="note" id="mnote"></p></section>
+
+<section class="two"><div class="card"><h2>Peta elektoral</h2>
+<div class="bar"><label for="met" class="note">Tampilkan:</label><select id="met">
+<option value="v">Suara PDIP</option><option value="sh">Pangsa suara PDIP (%)</option><option value="chg">Perubahan suara PDIP 2019→2024</option><option value="psi">Pangsa suara PSI (%)</option><option value="win">Partai teratas</option></select></div>
+<svg class="map" id="map" viewBox="0 0 400 320" role="group" aria-label="Peta skematik empat wilayah Dapil Jateng V"></svg>
+<div class="lg" id="lg"></div>
+<p class="note">Peta skematik: posisi relatif wilayah, bukan batas administratif yang presisi. Klik wilayah untuk memfilter seluruh dashboard.</p></div>
+<div class="card"><h2 id="dt">Ringkasan wilayah</h2><div class="st" id="st"></div>
+<h2 style="margin-top:16px">Temuan otomatis</h2><ul id="ins"></ul></div></section>
+
+<section class="two"><div class="card"><h2 id="ct">Suara per partai</h2><div id="bars"></div></div>
+<div class="card"><h2>Kandidat teratas</h2><p class="note" id="cn"></p><div class="wrap" id="cands"></div></div></section>
+
+<section class="card"><h2>2. Simulator kursi (Sainte-Laguë, 8 kursi)</h2>
+<p class="note" id="simn"></p>
+<div class="sl"><label for="sa">Swing suara PDIP</label><input type="range" id="sa" min="-40" max="40" value="0"><output id="oa">0%</output></div>
+<div class="sl"><label for="sb">Swing suara PSI</label><input type="range" id="sb" min="-50" max="100" value="0"><output id="ob">0%</output></div>
+<p class="note">Baseline (tanpa swing):</p><div class="chips" id="s0"></div>
+<p class="note">Hasil simulasi:</p><div class="chips" id="s1"></div>
+<p class="note">Indikatif: skala dapil penuh, tanpa ambang batas, hanya partai yang ada di lampiran; partai lain tetap.</p></section>
+
+<section class="card"><h2>PDIP dan PSI per wilayah</h2><div class="wrap"><table id="tb"></table></div>
+<p class="note">Total partai = suara partai + seluruh suara calegnya, dari lampiran DATA_PARTAI_TERBARU.</p></section>
+
+<section class="card"><h2>Catatan data</h2><div class="warn"><ul>
+<li>Angka lampiran berbeda dari policy brief: Puan 2024 tertulis 433.559 (brief: 297.366, turun 26,45%); total PDIP 2024 di lampiran 1.094.605 (brief: 774.282); Puan 2019 di lampiran 404.034 (brief: 404.304). Karena itu kartu di atas mengikuti lampiran, kecuali kursi 4→3 dari brief.</li>
+<li>Selisih terbesar ada di kolom Boyolali 2024, misalnya PDIP 497.097 vs 296.917 di 2019 dan Dwi Purwanto (Demokrat) 122.382 di Boyolali. Mohon cek ke rekap KPU sebelum dipakai.</li>
+<li>Pangsa suara dihitung dari partai yang ada di lampiran; Perindo, Garuda, dan Berkarya tidak ada di data 2024, sehingga pangsa dua tahun tidak sepenuhnya sebanding.</li>
+<li>Kenaikan suara PSI tidak otomatis berasal dari pemilih PDIP; ini sesuai catatan policy brief.</li></ul></div></section>
+</main>
+<footer class="w">Sumber: lampiran PARTAI (docx) dan Policy Brief “Tantangan Pemenangan Pileg PDI Perjuangan di Dapil Jateng V”.</footer>
+<script>
+const D={"v":{"PKB":{"2019":[36141,94367,38109,9055],"2024":[47517,34088,38382,9482]},"Gerindra":{"2019":[22384,47766,38158,13003],"2024":[106868,94965,73741,31835]},"PDIP":{"2019":[296917,187434,212805,201891],"2024":[497097,288800,183670,125038]},"Golkar":{"2019":[91363,129537,46225,16546],"2024":[153220,232881,64651,23993]},"NasDem":{"2019":[59728,96934,65965,16656],"2024":[33001,92964,33786,15194]},"Garuda":{"2019":[1337,1549,1054,587]},"Berkarya":{"2019":[4587,4933,4311,2838]},"PKS":{"2019":[44875,53307,39437,29526],"2024":[74771,128314,47240,41440]},"Perindo":{"2019":[17751,18600,7108,5722]},"PPP":{"2019":[7424,10580,4170,3573],"2024":[4764,12248,2745,2907]},"PSI":{"2019":[3469,7929,6923,14469],"2024":[52862,32759,27073,52743]},"PAN":{"2019":[11236,66288,27749,15987],"2024":[40712,89627,40908,15930]},"Hanura":{"2019":[327,1583,304,1060],"2024":[1771,1345,762,691]},"Demokrat":{"2019":[18264,25916,7352,5080],"2024":[137755,53393,13125,8656]}},"c":{"Gerindra":{"2019":[["BAMBANG RIYANTO, SH., MH., M.Si",[5289,15862,18035,3840]],["PRATITIS MUKTI TAMI, S.Pd",[1587,8780,656,322]],["M.B. Setiadharma",[3373,3624,2175,651]]],"2024":[["Adik Sasongko",[60084,43627,35280,9001]],["Hj. SUYATMI, S.Pd., M.M.",[4031,30488,2641,1366]],["H. BAMBANG RIYANTO, S.H., M.H., M.Si.",[9518,4007,12014,4916]]]},"PDIP":{"2019":[["Puan Maharani",[117533,83232,104441,98828]],["Aria Bima",[24685,30356,34264,34224]],["RAHMAD HANDOYO, S.Pi., M.M.",[38074,5486,2549,1356]]],"2024":[["Puan Maharani",[197643,119068,79711,37137]],["Aria Bima",[44918,49926,27812,33635]],["H. Didik Haryadi, S.T., S.H.",[78045,24413,7488,4667]]]},"Golkar":{"2019":[["H. Singgih Januratmoko, S.Kh., M.M",[26757,43807,19787,5737]],["ENDANG SRIKARTI HANDAYANI, S.H., M.Hum.",[39728,42933,4207,1253]],["Evandra R P Subagyo, S.I.A",[5972,14238,2895,2046]]],"2024":[["H. Singgih Januratmoko, S.K.H., M.M.",[33597,107791,27674,6888]],["Dr. HENRY INDRAGUNA",[36047,51525,17094,8204]],["Dr. ENDANG SRIKARTI HANDAYANI, S.H., M.Hum.",[58312,39606,4539,1123]]]},"PKS":{"2019":[["Dr. H. ABDUL KHARIS ALMASYHARI",[11293,20333,15224,14477]],["Tugiman, Sp",[20442,3812,6912,1219]],["Agus Abdulatif, Se",[1279,11830,1586,1007]]],"2024":[["Dr. H. ABDUL KHARIS ALMASYHARI, S.E., M.Si.",[32838,70277,19973,22395]],["H. Moch. Samrodin, S.E., M.M.",[4167,4326,10357,3919]],["Agus Subagiyo, S.H., M.H",[1441,20049,773,504]]]},"PSI":{"2019":[["DR. RITA KUSRIASTUTI, MSc",[777,1773,1486,2627]],["Jemy Yapola",[103,279,284,1109]],["Maya Aolia",[171,370,281,569]]],"2024":[["Cynthia Riza",[18737,12459,13150,28840]],["Budi Santoso, S.T.",[18259,9677,3620,2314]],["Ari Nugroho",[1487,2843,800,1489]]]}}};
+const R=["Boyolali","Klaten","Sukoharjo","Surakarta"],P=Object.keys(D.v);
+const COL={PDIP:"#b3121a",PSI:"#e8871e",Golkar:"#d9b400",Gerindra:"#8a5a2b",PKB:"#2e8b57",PKS:"#555",NasDem:"#2c5fa8",Demokrat:"#3a86d9",PAN:"#4bb3d6",PPP:"#1e7a3a",Hanura:"#c98a10"};
+const G=[["Boyolali","40,30 270,20 300,100 240,140 150,150 60,130",[160,80]],["Klaten","60,130 150,150 240,140 265,180 250,240 130,270 40,220",[150,205]],["Sukoharjo","265,180 315,185 335,140 375,200 350,280 290,300 250,240",[322,240]],["Surakarta","240,140 300,100 335,140 315,185 265,180",[292,150]]];
+let mode="d",reg=-1,met="v";
+const $=id=>document.getElementById(id);
+const f=n=>n==null?"–":Math.round(n).toLocaleString("id-ID"),nf=(n,d=1)=>n.toLocaleString("id-ID",{maximumFractionDigits:d});
+const pc=(a,b)=>a?(b-a)/a*100:null,sp=x=>x==null?"–":(x>=0?"+":"")+nf(x)+"%";
+const yr=()=>mode=="d"?2024:+mode,I=()=>reg<0?[0,1,2,3]:[reg];
+const has=(p,y)=>!!D.v[p][y],val=(p,y,i)=>has(p,y)?D.v[p][y][i]:null;
+const sum=(p,y,ids)=>ids.reduce((s,i)=>s+(val(p,y,i)||0),0);
+const tot=(y,ids)=>P.reduce((s,p)=>s+sum(p,y,ids),0);
+const name=()=>reg<0?"seluruh dapil":R[reg];
+
+function mval(i){const y=yr();
+ if(met=="chg"){const c=pc(val("PDIP",2019,i),val("PDIP",2024,i));return{n:c,l:sp(c)}}
+ if(met=="win"){const b=P.filter(p=>has(p,y)).sort((a,c)=>val(c,y,i)-val(a,y,i))[0];return{w:b,l:b}}
+ if(met=="v"){const v=val("PDIP",y,i);return{n:v,l:f(v)}}
+ const s=val(met=="sh"?"PDIP":"PSI",y,i)/tot(y,[i])*100;return{n:s,l:nf(s)+"%"}}
+function map(){
+ const vs=[0,1,2,3].map(mval),mx=Math.max(...vs.map(x=>Math.abs(x.n||0)))||1;
+ const base=met=="psi"?"var(--psi)":"var(--red)";
+ $("map").innerHTML=G.map(([n,pts,[x,y]],i)=>{const v=vs[i];
+  const fill=v.w?COL[v.w]:met=="chg"?`color-mix(in srgb,${v.n>=0?"var(--red)":"#5a7d9a"} ${15+80*Math.abs(v.n)/mx}%,var(--card))`:`color-mix(in srgb,${base} ${15+80*v.n/mx}%,var(--card))`;
+  const s=reg==i;
+  return `<path data-r="${i}" d="M${pts.replace(/ /g,"L")}Z" style="fill:${fill}" stroke="${s?"var(--ink)":"var(--card)"}" stroke-width="${s?4:2}" tabindex="0" role="button" aria-pressed="${s}" aria-label="${n}: ${v.l}"/>
+  <text x="${x}" y="${y}" text-anchor="middle" font-size="${i==3?11:14}">${n}</text><text x="${x}" y="${y+15}" text-anchor="middle" font-size="12" style="font-weight:600">${v.l}</text>`}).join("");
+ $("map").querySelectorAll("path").forEach(p=>{const h=()=>{const r=+p.dataset.r;reg=reg==r?-1:r;render()};p.onclick=h;p.onkeydown=e=>{if(e.key=="Enter"||e.key==" "){e.preventDefault();h()}}});
+ const y=yr(),t={v:"Suara PDIP "+y,sh:"Pangsa PDIP "+y,psi:"Pangsa PSI "+y,chg:"Perubahan PDIP 2019→2024"}[met];
+ if(met=="win"){const u=[...new Set(vs.map(v=>v.w))];$("lg").innerHTML="Partai teratas "+y+": "+u.map(p=>`<span><i class="dot" style="background:${COL[p]}"></i>${p}</span>`).join(" ")}
+ else{const mn=met=="chg"?-mx:0,m=(met=="v"?f(mx):nf(mx)+(met=="chg"?"%":"%"));
+  const g=met=="chg"?"linear-gradient(90deg,#5a7d9a,var(--card),var(--red))":`linear-gradient(90deg,var(--card),${base})`;
+  $("lg").innerHTML=t+": <span>"+(met=="chg"?"−"+nf(mx)+"%":"rendah")+"</span><div class='gb' style='background:"+g+"'></div><span>"+(met=="chg"?"+"+nf(mx)+"%":m)+"</span>"}
+}
+function detail(){
+ const y=yr(),ids=I(),T=tot(y,ids),pd=sum("PDIP",y,ids),ps=sum("PSI",y,ids);
+ const rk=P.filter(p=>has(p,y)&&sum(p,y,ids)>pd).length+1,top=P.filter(p=>has(p,y)).sort((a,b)=>sum(b,y,ids)-sum(a,y,ids))[0];
+ const d=pc(sum("PDIP",2019,ids),sum("PDIP",2024,ids)),d2=pc(sum("PSI",2019,ids),sum("PSI",2024,ids));
+ $("dt").textContent="Ringkasan — "+name()+" ("+y+")";
+ $("st").innerHTML=[[f(pd),"suara PDIP"],[nf(pd/T*100)+"%","pangsa PDIP · peringkat "+rk],[f(ps),"suara PSI ("+nf(ps/T*100)+"%)"],[top,"partai teratas"],[sp(d),"PDIP 2019→2024"],[sp(d2),"PSI 2019→2024"]].map(([a,b])=>`<div><b>${a}</b><span>${b}</span></div>`).join("");
+ const ch=[0,1,2,3].map(i=>[R[i],pc(val("PDIP",2019,i),val("PDIP",2024,i))]).sort((a,b)=>a[1]-b[1]);
+ const ps2=[0,1,2,3].map(i=>[R[i],pc(val("PSI",2019,i),val("PSI",2024,i))]).sort((a,b)=>b[1]-a[1]);
+ const dn=ch.filter(c=>c[1]<0),up=ch.filter(c=>c[1]>=0);
+ const psh=[0,1,2,3].map(i=>[R[i],val("PSI",2024,i)/tot(2024,[i])*100]).sort((a,b)=>b[1]-a[1])[0];
+ $("ins").innerHTML=`<li>Suara PDIP turun di ${dn.map(c=>c[0]+" ("+sp(c[1])+")").join(", ")||"–"}; naik di ${up.map(c=>c[0]+" ("+sp(c[1])+")").join(", ")||"–"}.</li>
+ <li>PSI tumbuh paling cepat di ${ps2[0][0]} (${sp(ps2[0][1])}); pangsa PSI 2024 tertinggi di ${psh[0]} (${nf(psh[1])}%).</li>
+ <li>Suara PDIP terendah 2024 di ${ch.length&&R[[0,1,2,3].sort((a,b)=>val("PDIP",2024,a)-val("PDIP",2024,b))[0]]}, wilayah dengan ruang pemulihan paling besar.</li>`;
+}
+function bars(){
+ const y=yr(),ids=I();let rows;
+ if(mode=="d"){$("ct").textContent="Perubahan suara 2019→2024 — "+name();
+  rows=P.filter(p=>has(p,2019)&&has(p,2024)).map(p=>{const a=sum(p,2019,ids),b=sum(p,2024,ids);return{p,v:b-a,t:(b>=a?"+":"")+f(b-a)+" ("+sp(pc(a,b))+")"}})}
+ else{$("ct").textContent="Suara per partai "+mode+" — "+name();const T=tot(y,ids);
+  rows=P.filter(p=>has(p,y)).map(p=>{const v=sum(p,y,ids);return{p,v,t:f(v)+" ("+nf(v/T*100)+"%)"}})}
+ rows.sort((a,b)=>b.v-a.v);const m=Math.max(...rows.map(r=>Math.abs(r.v)))||1;
+ $("bars").innerHTML=rows.map(r=>`<div class="row ${r.p=="PDIP"?"pdip":r.p=="PSI"?"psi":""} ${r.v<0?"neg":""}"><label>${r.p}</label><div class="tr"><div class="f" style="width:${Math.abs(r.v)/m*100}%"></div><i>${r.t}</i></div></div>`).join("");
+}
+function cands(){
+ const y=yr(),ids=I();let out="";
+ Object.keys(D.c).forEach(p=>{(D.c[p][y]||[]).map(([n,v])=>[n,ids.reduce((a,i)=>a+(v[i]||0),0)]).sort((a,b)=>b[1]-a[1]).slice(0,2).forEach(([n,v])=>out+=`<tr><td>${n}</td><td>${p}</td><td class="r">${f(v)}</td></tr>`)});
+ $("cn").textContent="Tahun "+y+" · "+name()+" · 2 kandidat teratas per partai";
+ $("cands").innerHTML=out?`<table><tr><th>Kandidat</th><th>Partai</th><th class="r">Suara</th></tr>${out}</table>`:'<p class="note">Tidak ada data kandidat.</p>';
+}
+function seats(v,n=8){const q=[];for(const p in v)for(let k=0;k<n;k++)q.push([v[p]/(2*k+1),p]);q.sort((a,b)=>b[0]-a[0]);const s={};q.slice(0,n).forEach(([,p])=>s[p]=(s[p]||0)+1);return s}
+function chips(s){return Object.entries(s).sort((a,b)=>b[1]-a[1]).map(([p,n])=>`<span class="chip" style="border-color:${COL[p]||"#888"}">${p} <b>${n}</b></span>`).join("")}
+function sim(){
+ const y=yr(),a=+$("sa").value,b=+$("sb").value;$("oa").textContent=sp(a);$("ob").textContent=sp(b);
+ $("simn").textContent="Dasar suara: pemilu "+y+", seluruh dapil (filter wilayah tidak berlaku). Geser slider untuk melihat efek swing terhadap kursi.";
+ const v={};P.filter(p=>has(p,y)).forEach(p=>v[p]=sum(p,y,[0,1,2,3]));
+ $("s0").innerHTML=chips(seats(v));const w={...v};w.PDIP*=1+a/100;w.PSI*=1+b/100;$("s1").innerHTML=chips(seats(w));
+}
+function table(){
+ let h='<tr><th>Wilayah</th><th class="r">PDIP 2019</th><th class="r">PDIP 2024</th><th class="r">Δ</th><th class="r">PSI 2019</th><th class="r">PSI 2024</th><th class="r">Δ</th></tr>';
+ [0,1,2,3,-1].forEach(i=>{const ids=i<0?[0,1,2,3]:[i],g=(p,y)=>sum(p,y,ids);
+  h+=`<tr style="${i<0?"font-weight:800":""}"><td>${i<0?"Dapil":R[i]}</td><td class="r">${f(g("PDIP",2019))}</td><td class="r">${f(g("PDIP",2024))}</td><td class="r">${sp(pc(g("PDIP",2019),g("PDIP",2024)))}</td><td class="r">${f(g("PSI",2019))}</td><td class="r">${f(g("PSI",2024))}</td><td class="r">${sp(pc(g("PSI",2019),g("PSI",2024)))}</td></tr>`});
+ $("tb").innerHTML=h;
+}
+function kpi(){
+ const ids=I(),pu=y=>D.c.PDIP[y].find(x=>/puan/i.test(x[0]))[1].reduce((q,z,i)=>q+(ids.includes(i)?z:0),0);
+ const a=sum("PDIP",2019,ids),b=sum("PDIP",2024,ids),s1=sum("PSI",2019,ids),s2=sum("PSI",2024,ids),p1=pu(2019),p2=pu(2024),n=reg<0?"dapil":R[reg];
+ $("kpu").textContent=sp(pc(p1,p2));$("kpul").textContent="Suara Puan Maharani ("+n+"): "+f(p1)+" → "+f(p2)+" (lampiran)";
+ $("kp").textContent=sp(pc(a,b));$("kpl").textContent="Total suara PDIP "+n+": "+f(a)+" → "+f(b)+" (lampiran)";
+ $("ks").textContent=sp(pc(s1,s2));$("ksl").textContent="Total suara PSI "+n+": "+f(s1)+" → "+f(s2)+" (lampiran)";
+}
+function render(){
+ document.querySelectorAll("#sy button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m==mode));
+ $("sr").innerHTML=["Seluruh dapil",...R].map((r,i)=>`<button data-r="${i-1}" aria-pressed="${reg==i-1}">${r}</button>`).join("");
+ $("sr").querySelectorAll("button").forEach(b=>b.onclick=()=>{reg=+b.dataset.r;render()});
+ $("mnote").textContent=mode=="d"?"Perubahan = suara 2024 dikurangi suara 2019 (persen dari suara 2019). Peta dan ringkasan memakai data 2024 kecuali metrik perubahan.":"";
+ kpi();map();detail();bars();cands();sim();
+}
+document.querySelectorAll("#sy button").forEach(b=>b.onclick=()=>{mode=b.dataset.m;render()});
+$("met").onchange=e=>{met=e.target.value;map()};$("sa").oninput=$("sb").oninput=sim;
+table();render();
+</script></body></html>
